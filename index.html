@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Um Brinde ao Brasil — Vinhos que Surpreendem</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <style>
     :root {
       --terracotta: #C4714A;
@@ -87,8 +88,8 @@
     .hero-left::before {
       content: '';
       position: absolute; inset: 0;
-      background: url('https://images.unsplash.com/photo-1506377585622-bedcbb027afc?w=800&q=60') center/cover;
-      opacity: 0.12;
+      background: url('https://images.unsplash.com/photo-1543857182-1dcc1561e501?w=800&q=70') center/cover;
+      opacity: 0.28;
     }
     .hero-eyebrow {
       font-size: 0.68rem;
@@ -251,7 +252,7 @@
     .regioes .section-body { color: rgba(242,237,229,0.7); max-width: 100%; }
     .regioes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2px;
       margin-top: 4rem;
     }
@@ -563,7 +564,7 @@
     .cta-section::before {
       content: '';
       position: absolute; inset: 0;
-      background: url('https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=1200&q=40') center/cover;
+      background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=40') center/cover;
       opacity: 0.08;
     }
     .cta-section .section-title {
@@ -701,7 +702,7 @@
       </div>
     </div>
     <div class="hero-right">
-      <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=900&q=75" alt="Vinhedos brasileiros" />
+      <img src="https://images.unsplash.com/photo-1504279577054-acfeccf8fc52?w=900&q=80" alt="Brinde com taças de vinho nos vinhedos" />
       <div class="hero-stat">
         <strong>+90.000 ha</strong>
         <span>de vinhedos no Brasil</span>
@@ -726,7 +727,7 @@
       <div class="regiao-card">
         <p class="regiao-flag">Rio Grande do Sul</p>
         <h3 class="regiao-name">Serra Gaúcha</h3>
-        <p class="regiao-desc">O berço da vitivinicultura brasileira. Bento Gonçalves, Garibaldi e Caxias do Sul concentram os maiores produtores, com vinhos de finesse e tradição.</p>
+        <p class="regiao-desc">O berço da vitivinicultura brasileira. Bento Gonçalves, Garibaldi, Caxias do Sul e a sub-região Vale dos Vinhedos — a primeira com IG no país — concentram tradição, espumantes clássicos e vinhos finos de qualidade crescente.</p>
         <div class="regiao-uvas">
           <span class="tag-uva">Merlot</span>
           <span class="tag-uva">Cabernet Franc</span>
@@ -737,8 +738,19 @@
 
       <div class="regiao-card">
         <p class="regiao-flag">Rio Grande do Sul</p>
+        <h3 class="regiao-name">Pinto Bandeira</h3>
+        <p class="regiao-desc">Pequena e preciosa, esta IG gaúcha é referência em espumantes de alta qualidade. Altitude, solos basálticos e noites frias criam vinhos de acidez vibrante e bolhas elegantes que rivalizam com os melhores do mundo.</p>
+        <div class="regiao-uvas">
+          <span class="tag-uva">Chardonnay</span>
+          <span class="tag-uva">Pinot Noir</span>
+          <span class="tag-uva">Riesling Itálico</span>
+        </div>
+      </div>
+
+      <div class="regiao-card">
+        <p class="regiao-flag">Rio Grande do Sul</p>
         <h3 class="regiao-name">Campos de Cima da Serra</h3>
-        <p class="regiao-desc">Altitude e frio revelam vinhos de acidez vibrante e elegância rara. Uma das fronteiras mais excitantes do vinho brasileiro.</p>
+        <p class="regiao-desc">Altitude extrema e frio intenso revelam vinhos de acidez vibrante e elegância rara. Uma das fronteiras mais excitantes do vinho brasileiro, com castas aromáticas e tintos de frescor surpreendente.</p>
         <div class="regiao-uvas">
           <span class="tag-uva">Pinot Noir</span>
           <span class="tag-uva">Gewürztraminer</span>
@@ -747,31 +759,43 @@
       </div>
 
       <div class="regiao-card">
+        <p class="regiao-flag">Rio Grande do Sul</p>
+        <h3 class="regiao-name">Campanha Gaúcha</h3>
+        <p class="regiao-desc">Na fronteira com o Uruguai, solos profundos e clima continental revelam Tannat e Cabernet Sauvignon de estrutura e complexidade crescentes. Uma das regiões com maior potencial de expansão do país.</p>
+        <div class="regiao-uvas">
+          <span class="tag-uva">Tannat</span>
+          <span class="tag-uva">Cabernet Sauvignon</span>
+          <span class="tag-uva">Tempranillo</span>
+        </div>
+      </div>
+
+      <div class="regiao-card">
         <p class="regiao-flag">Santa Catarina</p>
         <h3 class="regiao-name">Planalto Catarinense</h3>
-        <p class="regiao-desc">São Joaquim e Campos Novos, a mais de 1.400m de altitude, produzem vinhos brancos aromáticos e tintos de frescor surpreendente.</p>
+        <p class="regiao-desc">São Joaquim e Campos Novos, a mais de 1.400m de altitude, produzem alguns dos vinhos mais elegantes do Brasil. Brancos aromáticos e tintos de frescor que surpreendem especialistas internacionais.</p>
         <div class="regiao-uvas">
           <span class="tag-uva">Tannat</span>
           <span class="tag-uva">Sauvignon Blanc</span>
           <span class="tag-uva">Syrah</span>
+          <span class="tag-uva">Pinot Noir</span>
         </div>
       </div>
 
       <div class="regiao-card">
-        <p class="regiao-flag">Minas Gerais / São Paulo</p>
+        <p class="regiao-flag">Minas Gerais · São Paulo</p>
         <h3 class="regiao-name">Serra da Mantiqueira</h3>
-        <p class="regiao-desc">São Bento do Sapucaí e Andradas abrigam vinhedos de altitude que surpreendem com Pinot Noir e Chardonnay de personalidade única.</p>
+        <p class="regiao-desc">São Bento do Sapucaí, Andradas e Caldas abrigam vinhedos de altitude que produzem Pinot Noir e Chardonnay de personalidade única. A região mais jovem e uma das mais promissoras do Brasil.</p>
         <div class="regiao-uvas">
           <span class="tag-uva">Pinot Noir</span>
           <span class="tag-uva">Chardonnay</span>
-          <span class="tag-uva">Merlot</span>
+          <span class="tag-uva">Cabernet Franc</span>
         </div>
       </div>
 
       <div class="regiao-card">
-        <p class="regiao-flag">Pernambuco / Bahia</p>
+        <p class="regiao-flag">Pernambuco</p>
         <h3 class="regiao-name">Vale do São Francisco</h3>
-        <p class="regiao-desc">Produção tropical única no mundo, com até duas safras por ano. Vinhos exuberantes, frutados, que mostram o caráter do Brasil semiárido.</p>
+        <p class="regiao-desc">Em Lagoa Grande (PE), a vitivinicultura tropical é fenômeno único no mundo: até duas safras por ano sob o sol do semiárido. Syrah frutado, Chenin Blanc fresco e espumantes que surpreendem pela vivacidade.</p>
         <div class="regiao-uvas">
           <span class="tag-uva">Syrah</span>
           <span class="tag-uva">Cabernet Sauvignon</span>
@@ -780,13 +804,13 @@
       </div>
 
       <div class="regiao-card">
-        <p class="regiao-flag">Rio Grande do Sul</p>
-        <h3 class="regiao-name">Campanha Gaúcha</h3>
-        <p class="regiao-desc">Fronteira com o Uruguai, solos profundos e clima continental revelam Tannat e Cabernet Sauvignon de estrutura e complexidade crescentes.</p>
+        <p class="regiao-flag">Espírito Santo</p>
+        <h3 class="regiao-name">Montanhas do Espírito Santo</h3>
+        <p class="regiao-desc">A mais nova IG de vinhos finos do Brasil, conquistada em 2022. Na região de Domingos Martins e Venda Nova do Imigrante, descendentes de italianos produzem vinhos de altitude com identidade própria e crescente reconhecimento.</p>
         <div class="regiao-uvas">
-          <span class="tag-uva">Tannat</span>
-          <span class="tag-uva">Cabernet Sauvignon</span>
-          <span class="tag-uva">Tempranillo</span>
+          <span class="tag-uva">Merlot</span>
+          <span class="tag-uva">Cabernet Franc</span>
+          <span class="tag-uva">Syrah</span>
         </div>
       </div>
 
@@ -801,7 +825,7 @@
     </div>
     <div class="uvas-layout">
       <div class="uvas-image reveal" style="transition-delay:0.15s">
-        <img src="https://images.unsplash.com/photo-1504279577054-acfeccf8fc52?w=700&q=75" alt="Vinhedos brasileiros" />
+        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=700&q=80" alt="Fileiras de vinhedo brasileiro" />
         <div class="uvas-image-caption">
           "O terroir brasileiro traduz cada casta com sotaque próprio."
         </div>
@@ -901,6 +925,28 @@
             </iframe>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section style="padding: 0; background: var(--soil);">
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); height: 340px;">
+      <div style="overflow:hidden; position:relative;">
+        <img src="https://images.unsplash.com/photo-1543352634-99a5d50ae78e?w=500&q=80" alt="Brinde com vinho tinto" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.2rem;background:linear-gradient(transparent,rgba(61,43,31,0.85));color:var(--gold);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;">Brinde</div>
+      </div>
+      <div style="overflow:hidden; position:relative;">
+        <img src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=500&q=80" alt="Espumante brasileiro" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.2rem;background:linear-gradient(transparent,rgba(61,43,31,0.85));color:var(--gold);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;">Espumante</div>
+      </div>
+      <div style="overflow:hidden; position:relative;">
+        <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=500&q=80" alt="Vinhedos ao entardecer" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.2rem;background:linear-gradient(transparent,rgba(61,43,31,0.85));color:var(--gold);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;">Vinhedos</div>
+      </div>
+      <div style="overflow:hidden; position:relative;">
+        <img src="https://images.unsplash.com/photo-1528823872057-9c018a7a7553?w=500&q=80" alt="Taças de vinho tinto" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'"/>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:1.2rem;background:linear-gradient(transparent,rgba(61,43,31,0.85));color:var(--gold);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;">Terroir</div>
       </div>
     </div>
   </section>
