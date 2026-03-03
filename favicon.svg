@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4A2C1A"/>
+      <stop offset="100%" stop-color="#2A1810"/>
+    </radialGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4B98A" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#BFA070" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="wineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C4714A"/>
+      <stop offset="100%" stop-color="#7A2A1A"/>
+    </linearGradient>
+    <linearGradient id="shineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="31" fill="url(#bgGrad)"/>
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#BFA070" stroke-width="0.6" opacity="0.5"/>
+
+  <!-- Wine fill inside bowl -->
+  <path d="M22.5,20 L41.5,20 Q40.5,26 38,29.5 Q35.5,32.5 32,33.2 Q28.5,32.5 26,29.5 Q23.5,26 22.5,20 Z"
+        fill="url(#wineGrad)" opacity="0.88"/>
+
+  <!-- Glass outline - bowl -->
+  <path d="M20,13 L44,13 Q43,22 40,27 Q37,32 32,33 Q27,32 24,27 Q21,22 20,13 Z"
+        fill="none" stroke="url(#glassGrad)" stroke-width="1.2"/>
+
+  <!-- Top rim of glass -->
+  <line x1="20" y1="13" x2="44" y2="13" stroke="#D4B98A" stroke-width="1.4" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- Glass stem -->
+  <line x1="32" y1="33" x2="32" y2="48" stroke="#D4B98A" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Glass base -->
+  <path d="M25,48 Q28.5,47 32,47 Q35.5,47 39,48" fill="none" stroke="#D4B98A" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Shine on glass left side -->
+  <path d="M23,15 Q22,19 22,24" stroke="white" stroke-width="1.1" fill="none" opacity="0.4" stroke-linecap="round"/>
+
+  <!-- Small grape leaf -->
+  <g transform="translate(37, 9) rotate(-20)">
+    <path d="M0,0 Q3,-4 6,-2 Q8,2 5,5 Q2,6 0,4 Q-2,2 0,0 Z"
+          fill="#4A6741" opacity="0.85"/>
+    <path d="M0,0 Q3,1 5,4" stroke="#3A5231" stroke-width="0.5" fill="none" opacity="0.7"/>
+    <path d="M2,-1 Q3,1 4,3" stroke="#3A5231" stroke-width="0.3" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- Tiny grape cluster -->
+  <circle cx="40" cy="18" r="1.2" fill="#7A2A3A" opacity="0.7"/>
+  <circle cx="42" cy="17" r="1.1" fill="#8A3A4A" opacity="0.65"/>
+  <circle cx="41" cy="15.5" r="1" fill="#7A2A3A" opacity="0.6"/>
+
+  <!-- Shine overlay -->
+  <ellipse cx="32" cy="22" rx="10" ry="6" fill="url(#shineGrad)" opacity="0.2"/>
+</svg>
