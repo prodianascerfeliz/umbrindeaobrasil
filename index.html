@@ -703,6 +703,225 @@
     }
     .vini-clear-btn:hover { color: var(--terracotta-light); }
 
+
+    /* ── DICAS DO VINI ── */
+    .dicas-section {
+      background: var(--soil);
+      padding: 6rem 6rem 5rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .dicas-section::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(196,113,74,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .dicas-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .dicas-header .section-label { color: var(--gold); }
+    .dicas-header .section-title { color: var(--cream); margin-bottom: 0; }
+    .dicas-refresh-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      border: 1px solid rgba(191,160,112,0.3);
+      color: rgba(242,237,229,0.6);
+      padding: 0.6rem 1.4rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .dicas-refresh-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .dicas-refresh-btn.loading { opacity: 0.5; pointer-events: none; }
+    .dicas-refresh-btn .spin { display: inline-block; }
+    .dicas-refresh-btn.loading .spin { animation: dicaSpin 0.8s linear infinite; }
+    @keyframes dicaSpin { to { transform: rotate(360deg); } }
+
+    /* Carrossel */
+    .dicas-track-wrap {
+      position: relative;
+    }
+    .dicas-track {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      padding-bottom: 1rem;
+      cursor: grab;
+    }
+    .dicas-track:active { cursor: grabbing; }
+    .dicas-track::-webkit-scrollbar { display: none; }
+
+    /* Card */
+    .dica-card {
+      flex: 0 0 340px;
+      scroll-snap-align: start;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(191,160,112,0.12);
+      border-radius: 3px;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: border-color 0.25s, transform 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .dica-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--terracotta), var(--gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .dica-card:hover { border-color: rgba(191,160,112,0.3); transform: translateY(-3px); }
+    .dica-card:hover::after { transform: scaleX(1); }
+
+    .dica-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .dica-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(196,113,74,0.15);
+      border: 1px solid rgba(196,113,74,0.25);
+      color: var(--terracotta-light);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 20px;
+    }
+    .dica-date {
+      font-size: 0.6rem;
+      color: rgba(242,237,229,0.25);
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+    .dica-titulo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.3;
+    }
+    .dica-titulo em { font-style: italic; color: var(--terracotta-light); }
+    .dica-texto {
+      font-size: 0.76rem;
+      font-weight: 300;
+      color: rgba(242,237,229,0.6);
+      line-height: 1.75;
+      flex: 1;
+    }
+    .dica-vinho {
+      background: rgba(191,160,112,0.07);
+      border-left: 2px solid var(--gold);
+      padding: 0.7rem 1rem;
+      border-radius: 0 3px 3px 0;
+    }
+    .dica-vinho-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.25rem;
+    }
+    .dica-vinho-nome {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--cream);
+    }
+    .dica-card-footer {
+      display: flex;
+      gap: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(191,160,112,0.08);
+    }
+    .dica-share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 5px 11px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+      transition: all 0.18s;
+      text-decoration: none;
+    }
+    .dica-share-btn.whats { color: #5CCD8A; border-color: rgba(92,205,138,0.2); }
+    .dica-share-btn.whats:hover { background: rgba(92,205,138,0.08); border-color: rgba(92,205,138,0.4); }
+    .dica-share-btn.copy { color: rgba(242,237,229,0.4); border-color: rgba(255,255,255,0.08); }
+    .dica-share-btn.copy:hover { color: var(--gold); border-color: rgba(191,160,112,0.3); }
+
+    /* Loading skeleton */
+    .dica-skeleton {
+      flex: 0 0 340px;
+      height: 320px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(191,160,112,0.08);
+      border-radius: 3px;
+      position: relative;
+      overflow: hidden;
+    }
+    .dica-skeleton::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(191,160,112,0.06) 50%, transparent 100%);
+      animation: dicaShimmer 1.5s infinite;
+    }
+    @keyframes dicaShimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Nav dots */
+    .dicas-nav {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 1.5rem;
+    }
+    .dica-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(191,160,112,0.2);
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      padding: 0;
+    }
+    .dica-dot.active { background: var(--terracotta); width: 18px; border-radius: 3px; }
+
+
     /* ── HARMONIZAÇÃO ── */
     .harmonizacao {
       background: var(--sand);
@@ -1194,6 +1413,29 @@
     </div>
   </section>
 
+
+  <!-- DICAS DO VINI -->
+  <section class="dicas-section" id="dicas">
+    <div class="dicas-header reveal">
+      <div>
+        <p class="section-label">Dicas do Vini</p>
+        <h2 class="section-title" style="color:var(--cream)">O vinho certo<br><em style="color:var(--terracotta-light)">para cada momento</em></h2>
+      </div>
+      <button class="dicas-refresh-btn" id="dicasRefreshBtn" onclick="dicasCarregar()">
+        <span class="spin">↺</span> Novas dicas
+      </button>
+    </div>
+    <div class="dicas-track-wrap reveal" style="transition-delay:0.2s">
+      <div class="dicas-track" id="dicasTrack">
+        <!-- skeletons iniciais -->
+        <div class="dica-skeleton"></div>
+        <div class="dica-skeleton"></div>
+        <div class="dica-skeleton"></div>
+      </div>
+    </div>
+    <div class="dicas-nav" id="dicasNav"></div>
+  </section>
+
   <!-- HARMONIZAÇÃO -->
   <section class="harmonizacao" id="harmonizacao">
     <div class="reveal">
@@ -1284,6 +1526,166 @@
       });
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
+  </script>
+
+
+  <!-- DICAS DO VINI · JS -->
+  <script>
+  (function() {
+    var CACHE_KEY = 'vini_dicas_v1';
+    var CACHE_DATE_KEY = 'vini_dicas_date_v1';
+
+    function hoje() {
+      return new Date().toISOString().slice(0, 10);
+    }
+
+    function dicasFormatarData(iso) {
+      var d = new Date(iso + 'T12:00:00');
+      return d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' }).replace('.', '');
+    }
+
+    function dicasShareWhats(titulo, texto, vinho) {
+      var msg = '🍷 *Dica do VINI* — ' + titulo + '\n\n' + texto + '\n\n🥂 Vinho: *' + vinho + '*\n\n👉 umbrindeaobrasil.com.br';
+      return 'https://wa.me/?text=' + encodeURIComponent(msg);
+    }
+
+    function dicasCopiar(btn, titulo, texto, vinho) {
+      var txt = 'Dica do VINI — ' + titulo + '\n\n' + texto + '\n\nVinho: ' + vinho + '\n\numbrindeaobrasil.com.br';
+      navigator.clipboard.writeText(txt).then(function() {
+        btn.textContent = '✓ Copiado';
+        setTimeout(function() { btn.textContent = '⎘ Copiar'; }, 2000);
+      });
+    }
+
+    function dicasCriarCard(d) {
+      var card = document.createElement('div');
+      card.className = 'dica-card';
+      card.innerHTML =
+        '<div class="dica-card-top">' +
+          '<span class="dica-tag">✦ ' + d.tag + '<\/span>' +
+          '<span class="dica-date">' + dicasFormatarData(d.data) + '<\/span>' +
+        '<\/div>' +
+        '<div class="dica-titulo">' + d.titulo + '<\/div>' +
+        '<div class="dica-texto">' + d.texto + '<\/div>' +
+        '<div class="dica-vinho">' +
+          '<div class="dica-vinho-label">🍷 Vinho recomendado<\/div>' +
+          '<div class="dica-vinho-nome">' + d.vinho + '<\/div>' +
+        '<\/div>' +
+        '<div class="dica-card-footer">' +
+          '<a class="dica-share-btn whats" href="' + dicasShareWhats(d.titulo, d.texto, d.vinho) + '" target="_blank" rel="noopener">↗ WhatsApp<\/a>' +
+          '<button class="dica-share-btn copy" onclick="this.textContent=\'...\'; var self=this; var t=\''+d.titulo+'\',x=\''+d.texto+'\',v=\''+d.vinho+'\'; navigator.clipboard.writeText(\'Dica do VINI — \'+t+\'\\n\\n\'+x+\'\\n\\nVinho: \'+v+\'\\n\\numbrindeaobrasil.com.br\').then(function(){self.textContent=\'✓ Copiado\';setTimeout(function(){self.textContent=\'⎘ Copiar\';},2000);});">⎘ Copiar<\/button>' +
+        '<\/div>';
+      return card;
+    }
+
+    function dicasRenderizar(dicas) {
+      var track = document.getElementById('dicasTrack');
+      var nav = document.getElementById('dicasNav');
+      if (!track) return;
+
+      track.innerHTML = '';
+      nav.innerHTML = '';
+
+      dicas.forEach(function(d, i) {
+        track.appendChild(dicasCriarCard(d));
+        var dot = document.createElement('button');
+        dot.className = 'dica-dot' + (i === 0 ? ' active' : '');
+        dot.onclick = function() {
+          var cards = track.querySelectorAll('.dica-card');
+          if (cards[i]) cards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        };
+        nav.appendChild(dot);
+      });
+
+      // Drag scroll
+      var isDown = false, startX, scrollLeft;
+      track.addEventListener('mousedown', function(e) { isDown = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; });
+      track.addEventListener('mouseleave', function() { isDown = false; });
+      track.addEventListener('mouseup', function() { isDown = false; });
+      track.addEventListener('mousemove', function(e) {
+        if (!isDown) return;
+        e.preventDefault();
+        var x = e.pageX - track.offsetLeft;
+        track.scrollLeft = scrollLeft - (x - startX) * 1.5;
+      });
+
+      // Atualiza dot ativo no scroll
+      track.addEventListener('scroll', function() {
+        var dots = nav.querySelectorAll('.dica-dot');
+        var cards = track.querySelectorAll('.dica-card');
+        var closest = 0, minDist = Infinity;
+        cards.forEach(function(c, i) {
+          var dist = Math.abs(c.getBoundingClientRect().left - track.getBoundingClientRect().left);
+          if (dist < minDist) { minDist = dist; closest = i; }
+        });
+        dots.forEach(function(d, i) { d.className = 'dica-dot' + (i === closest ? ' active' : ''); });
+      });
+    }
+
+    function dicasMostrarSkeletons() {
+      var track = document.getElementById('dicasTrack');
+      if (!track) return;
+      track.innerHTML = '';
+      for (var i = 0; i < 3; i++) {
+        var s = document.createElement('div');
+        s.className = 'dica-skeleton';
+        track.appendChild(s);
+      }
+    }
+
+    window.dicasCarregar = async function(forcar) {
+      // Cache por dia
+      if (!forcar) {
+        try {
+          var cachedDate = localStorage.getItem(CACHE_DATE_KEY);
+          var cachedData = localStorage.getItem(CACHE_KEY);
+          if (cachedDate === hoje() && cachedData) {
+            dicasRenderizar(JSON.parse(cachedData));
+            return;
+          }
+        } catch(e) {}
+      }
+
+      dicasMostrarSkeletons();
+      var btn = document.getElementById('dicasRefreshBtn');
+      if (btn) btn.classList.add('loading');
+
+      try {
+        var resp = await fetch('/api/dicas', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ data: hoje() })
+        });
+
+        if (!resp.ok) throw new Error('status ' + resp.status);
+        var data = await resp.json();
+
+        if (data.dicas && data.dicas.length) {
+          try {
+            localStorage.setItem(CACHE_KEY, JSON.stringify(data.dicas));
+            localStorage.setItem(CACHE_DATE_KEY, hoje());
+          } catch(e) {}
+          dicasRenderizar(data.dicas);
+        } else {
+          throw new Error('Sem dicas');
+        }
+      } catch(e) {
+        // Mostra dicas fallback se API falhar
+        dicasRenderizar([
+          { tag: 'Harmonização', titulo: 'Feijoada de sexta merece um <em>Tannat</em> à altura', texto: 'O prato mais brasileiro de todos pede um vinho com personalidade. O Tannat gaúcho, com seus taninos firmes e frutas negras intensas, aguenta o tranco da feijoada com muito estilo.', vinho: 'Tannat — Campanha Gaúcha, RS', data: hoje() },
+          { tag: 'Espumante', titulo: 'Por que o espumante brasileiro surpreende', texto: 'Pinto Bandeira produz alguns dos melhores espumantes do hemisfério sul. As noites frias da Serra Gaúcha criam acidez natural e frescor que rivalizam com os melhores Champagnes.', vinho: 'Espumante Brut — Pinto Bandeira, RS', data: hoje() },
+          { tag: 'Descoberta', titulo: 'São Joaquim: onde o frio faz milagres', texto: 'A 1.400m de altitude, o Planalto Catarinense produz um Pinot Noir delicado e aromático que conquistou críticos internacionais. Um terroir único no Brasil.', vinho: 'Pinot Noir — São Joaquim, SC', data: hoje() }
+        ]);
+      }
+
+      if (btn) btn.classList.remove('loading');
+    };
+
+    // Carrega ao iniciar
+    document.addEventListener('DOMContentLoaded', function() {
+      window.dicasCarregar(false);
+    });
+  })();
   </script>
 
   <!-- VINI Chat powered by Claude API -->
