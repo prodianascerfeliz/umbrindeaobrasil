@@ -922,6 +922,140 @@
     .dica-dot.active { background: var(--terracotta); width: 18px; border-radius: 3px; }
 
 
+
+    /* ── VÍDEO VINI ── */
+    .vini-video-section {
+      background: var(--soil);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .vini-video-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+    }
+    .vini-video-left {
+      position: relative;
+      background: #0D0604;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .vini-video-left::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 3px; height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--gold) 30%, var(--gold) 70%, transparent);
+      opacity: 0.4;
+    }
+    .vini-video-el {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.92;
+    }
+    /* Botão play overlay */
+    .vini-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: opacity 0.3s;
+      background: rgba(13,6,4,0.35);
+    }
+    .vini-play-overlay.hidden { opacity: 0; pointer-events: none; }
+    .vini-play-btn {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: rgba(196,113,74,0.9);
+      border: 2px solid rgba(242,237,229,0.3);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.2s, background 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .vini-play-overlay:hover .vini-play-btn {
+      transform: scale(1.1);
+      background: var(--terracotta);
+    }
+    .vini-play-btn svg { margin-left: 4px; }
+
+    .vini-video-right {
+      background: linear-gradient(135deg, #1A0F0A 0%, #2A1810 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .vini-video-right::before {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(196,113,74,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .vini-video-eyebrow {
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.2s forwards;
+    }
+    .vini-video-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .vini-video-title em {
+      font-style: italic;
+      color: var(--terracotta-light);
+    }
+    .vini-video-body {
+      font-size: 0.85rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(242,237,229,0.6);
+      max-width: 380px;
+      margin-bottom: 2.5rem;
+    }
+    .vini-video-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--terracotta);
+      color: white;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: background 0.3s, transform 0.2s;
+      align-self: flex-start;
+      border: none;
+      cursor: pointer;
+      font-family: 'Jost', sans-serif;
+    }
+    .vini-video-cta:hover { background: var(--gold); color: var(--soil); transform: translateY(-1px); }
+
+    @media (max-width: 768px) {
+      .vini-video-inner { grid-template-columns: 1fr; }
+      .vini-video-left { min-height: 260px; }
+      .vini-video-right { padding: 3rem 2rem; }
+    }
+
     /* ── HARMONIZAÇÃO ── */
     .harmonizacao {
       background: var(--sand);
@@ -1391,6 +1525,58 @@
       </div>
     </div>
   </section>
+
+
+  <!-- VÍDEO VINI -->
+  <section class="vini-video-section">
+    <div class="vini-video-inner">
+
+      <!-- Vídeo -->
+      <div class="vini-video-left reveal">
+        <video class="vini-video-el" id="viniVideo" preload="metadata" playsinline loop>
+          <source src="https://raw.githubusercontent.com/kuboferreira/umbrindeaobrasil/main/Sommelier_Brasileiro_Brindando_ao_Brasil.mp4" type="video/mp4">
+        </video>
+        <div class="vini-play-overlay" id="viniPlayOverlay" onclick="viniTogglePlay()">
+          <div class="vini-play-btn">
+            <svg id="viniPlayIcon" width="24" height="24" viewBox="0 0 24 24" fill="white">
+              <polygon points="5,3 19,12 5,21"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto -->
+      <div class="vini-video-right reveal" style="transition-delay:0.2s">
+        <p class="vini-video-eyebrow">· Conheça o Sommelier</p>
+        <h2 class="vini-video-title">
+          Deixa eu me<br>apresentar,<br>eu sou o <em>VINI</em>.
+        </h2>
+        <p class="vini-video-body">
+          Um sommelier criado para celebrar o vinho brasileiro. Conheço cada região, cada uva, cada terroir do Brasil — e estou aqui para ajudar você a encontrar o vinho certo para cada momento.
+        </p>
+        <a href="#vini" class="vini-video-cta">
+          Conversar com o VINI →
+        </a>
+      </div>
+
+    </div>
+  </section>
+  <script>
+    function viniTogglePlay() {
+      var v = document.getElementById('viniVideo');
+      var o = document.getElementById('viniPlayOverlay');
+      var icon = document.getElementById('viniPlayIcon');
+      if (v.paused) {
+        v.play();
+        o.classList.add('hidden');
+      } else {
+        v.pause();
+        o.classList.remove('hidden');
+        icon.setAttribute('points', '5,3 19,12 5,21');
+      }
+      v.onended = function() { o.classList.remove('hidden'); };
+    }
+  </script>
 
   <!-- GALERIA -->
   <section style="padding: 0; background: var(--soil);">
