@@ -1533,13 +1533,13 @@
 
       <!-- Vídeo -->
       <div class="vini-video-left reveal">
-        <video class="vini-video-el" id="viniVideo" preload="metadata" playsinline loop>
+        <video class="vini-video-el" id="viniVideo" preload="metadata" playsinline onclick="viniTogglePlay()">
           <source src="Sommelier_Brasileiro_Brindando_ao_Brasil.mp4" type="video/mp4">
         </video>
         <div class="vini-play-overlay" id="viniPlayOverlay" onclick="viniTogglePlay()">
           <div class="vini-play-btn">
             <svg id="viniPlayIcon" width="24" height="24" viewBox="0 0 24 24" fill="white">
-              <polygon points="5,3 19,12 5,21"/>
+              <polygon id="viniPlayPoly" points="5,3 19,12 5,21"/>
             </svg>
           </div>
         </div>
@@ -1562,20 +1562,48 @@
     </div>
   </section>
   <script>
-    function viniTogglePlay() {
-      var v = document.getElementById('viniVideo');
-      var o = document.getElementById('viniPlayOverlay');
-      var icon = document.getElementById('viniPlayIcon');
-      if (v.paused) {
-        v.play();
-        o.classList.add('hidden');
-      } else {
-        v.pause();
-        o.classList.remove('hidden');
-        icon.setAttribute('points', '5,3 19,12 5,21');
-      }
-      v.onended = function() { o.classList.remove('hidden'); };
-    }
+    (function() {
+      var PLAY_ICON  = '5,3 19,12 5,21';
+      var PAUSE_ICON = '6,4 10,4 10,20 6,20 M14,4 18,4 18,20 14,20';
+
+      window.viniTogglePlay = function() {
+        var v    = document.getElementById('viniVideo');
+        var o    = document.getElementById('viniPlayOverlay');
+        var poly = document.getElementById('viniPlayPoly');
+
+        if (v.paused || v.ended) {
+          v.play();
+          o.style.opacity = '0';
+          o.style.pointerEvents = 'auto'; // clicável mesmo invisível para pausar
+          poly.setAttribute('points', PAUSE_ICON);
+        } else {
+          v.pause();
+          o.style.opacity = '1';
+          poly.setAttribute('points', PLAY_ICON);
+        }
+      };
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var v = document.getElementById('viniVideo');
+        var o = document.getElementById('viniPlayOverlay');
+        var poly = document.getElementById('viniPlayPoly');
+        if (!v) return;
+
+        // Ao terminar: volta ao início e mostra play
+        v.addEventListener('ended', function() {
+          o.style.opacity = '1';
+          poly.setAttribute('points', PLAY_ICON);
+        });
+
+        // Hover: mostra o ícone atual levemente
+        v.addEventListener('mouseenter', function() {
+          if (!v.paused) o.style.opacity = '0.4';
+        });
+        v.addEventListener('mouseleave', function() {
+          if (!v.paused) o.style.opacity = '0';
+        });
+      });
+    })();
   </script>
 
   <!-- GALERIA -->
