@@ -33,7 +33,7 @@ Sempre que recomendar um vinho desses produtores, inclua o link de compra no for
 Coloque o link logo após o nome do vinho, na mesma frase.
 
 - Vinícola Calza (Serra Gaúcha): https://vinicolacalza.com.br/products
-- Miolo (Serra Gaúcha / Campanha): https://loja.miolo.com.br
+- Miolo (Serra Gaúcha / Campanha): https://www.miolo.com.br/
 - Casa Valduga (Serra Gaúcha): https://loja.famigliavalduga.com.br/casa-valduga
 - Pizzato (Serra Gaúcha): https://loja.pizzato.net/produtos
 - Lídio Carraro (Serra Gaúcha): https://loja.lidiocarraro.com
@@ -70,7 +70,7 @@ export default async function handler(req, res) {
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: model || 'claude-sonnet-5-5',
+        model: model || 'claude-sonnet-4-5',
         max_tokens: max_tokens || 900,
         system: VC_SYSTEM,
         messages,
